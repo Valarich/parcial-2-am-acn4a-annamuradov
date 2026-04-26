@@ -33,8 +33,9 @@ public class MainActivity extends AppCompatActivity {
 
             TextView nuevoHabito = new TextView(this);
             nuevoHabito.setText("Hábito " + contadorHabitos + ": " + getString(R.string.texto_habito_base));
-            nuevoHabito.setTextSize(18);
-            nuevoHabito.setPadding(0, 12, 0, 12);
+            nuevoHabito.setTextSize(getResources().getDimension(R.dimen.habito_texto) / getResources().getDisplayMetrics().scaledDensity);
+            int margenChico = getResources().getDimensionPixelSize(R.dimen.margen_chico);
+            nuevoHabito.setPadding(0, margenChico, 0, margenChico);
 
             listaHabitos.addView(nuevoHabito);
         });

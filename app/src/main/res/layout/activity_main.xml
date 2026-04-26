@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="24dp"
+    android:padding="@dimen/pantalla_padding"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -24,30 +24,30 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/titulo_habitos"
-            android:textSize="28sp"
+            android:textSize="@dimen/titulo_texto"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/txtDescripcion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="@dimen/margen_chico"
             android:gravity="center"
             android:text="@string/descripcion_habitos"
-            android:textSize="16sp" />
+            android:textSize="@dimen/descripcion_texto" />
 
         <Button
             android:id="@+id/btnAgregarHabito"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="@dimen/margen_medio"
             android:text="@string/boton_agregar_habito" />
 
         <LinearLayout
             android:id="@+id/listaHabitos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="@dimen/margen_medio"
             android:orientation="vertical" />
 
     </LinearLayout>

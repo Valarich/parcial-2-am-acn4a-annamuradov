@@ -1,0 +1,8 @@
+<resources>
+    <dimen name="pantalla_padding">24dp</dimen>
+    <dimen name="margen_chico">12dp</dimen>
+    <dimen name="margen_medio">24dp</dimen>
+    <dimen name="titulo_texto">28sp</dimen>
+    <dimen name="descripcion_texto">16sp</dimen>
+    <dimen name="habito_texto">18sp</dimen>
+</resources>
