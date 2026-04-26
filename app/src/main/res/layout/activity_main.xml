@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/color_fondo"
     android:padding="@dimen/pantalla_padding"
     tools:context=".MainActivity">
 
@@ -24,6 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/titulo_habitos"
+            android:textColor="@color/color_texto_principal"
             android:textSize="@dimen/titulo_texto"
             android:textStyle="bold" />
 
@@ -32,6 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margen_chico"
+            android:textColor="@color/color_texto_principal"
             android:gravity="center"
             android:text="@string/descripcion_habitos"
             android:textSize="@dimen/descripcion_texto" />
