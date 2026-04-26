@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
             contadorHabitos++;
 
             TextView nuevoHabito = new TextView(this);
-            nuevoHabito.setText("Hábito " + contadorHabitos + ": tomar agua");
+            nuevoHabito.setText("Hábito " + contadorHabitos + ": " + getString(R.string.texto_habito_base));
             nuevoHabito.setTextSize(18);
             nuevoHabito.setPadding(0, 12, 0, 12);
 

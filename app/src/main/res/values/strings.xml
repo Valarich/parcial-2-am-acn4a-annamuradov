@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Mis hábitos</string>
+    <string name="titulo_habitos">Mis hábitos</string>
+    <string name="descripcion_habitos">Agregá hábitos simples para organizar tu día.</string>
+    <string name="boton_agregar_habito">Agregar hábito</string>
+    <string name="texto_habito_base">tomar agua</string>
 </resources>
