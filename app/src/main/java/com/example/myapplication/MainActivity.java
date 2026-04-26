@@ -14,6 +14,14 @@ public class MainActivity extends AppCompatActivity {
 
     private int contadorHabitos = 0;
 
+    private String[] habitos = {
+            "tomar agua",
+            "leer 10 minutos",
+            "caminar",
+            "dormir 8 horas",
+            "estudiar"
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +40,8 @@ public class MainActivity extends AppCompatActivity {
             contadorHabitos++;
 
             TextView nuevoHabito = new TextView(this);
-            nuevoHabito.setText("Hábito " + contadorHabitos + ": " + getString(R.string.texto_habito_base));
+            String textoHabito = habitos[(contadorHabitos - 1) % habitos.length];
+            nuevoHabito.setText("Hábito " + contadorHabitos + ": " + textoHabito);
             nuevoHabito.setTextSize(getResources().getDimension(R.dimen.habito_texto) / getResources().getDisplayMetrics().scaledDensity);
             int margenChico = getResources().getDimensionPixelSize(R.dimen.margen_chico);
             nuevoHabito.setPadding(0, margenChico, 0, margenChico);
