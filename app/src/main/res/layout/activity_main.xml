@@ -29,6 +29,14 @@
             android:textSize="@dimen/titulo_texto"
             android:textStyle="bold" />
 
+        <ImageView
+            android:id="@+id/imgHabitos"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="@dimen/margen_chico"
+            android:contentDescription="@string/descripcion_imagen_habitos"
+            android:src="@drawable/habitos" />
+
         <TextView
             android:id="@+id/txtDescripcion"
             android:layout_width="match_parent"

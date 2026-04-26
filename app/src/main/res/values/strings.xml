@@ -4,4 +4,5 @@
     <string name="descripcion_habitos">Agregá hábitos simples para organizar tu día.</string>
     <string name="boton_agregar_habito">Agregar hábito</string>
     <string name="texto_habito_base">tomar agua</string>
+    <string name="descripcion_imagen_habitos">Imagen de una lista de hábitos</string>
 </resources>
