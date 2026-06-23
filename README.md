@@ -2,7 +2,11 @@
 
 ## Descripción general de la aplicación
 
-La aplicación “Mis hábitos” permite organizar hábitos diarios de forma simple. El usuario puede ver una lista inicial de hábitos, ingresar a una segunda pantalla para crear un nuevo hábito y volver a la pantalla principal con el hábito agregado a la lista.
+La aplicación “Mis hábitos” permite organizar hábitos diarios de forma simple.
+
+El usuario puede ver una lista inicial de hábitos, agregar un nuevo hábito desde una segunda pantalla, volver a la pantalla principal y visualizar el hábito agregado en la lista.
+
+La aplicación también permite limpiar la lista completa y muestra un mensaje cuando no hay hábitos cargados.
 
 ## Pantallas implementadas
 
@@ -10,81 +14,103 @@ La aplicación “Mis hábitos” permite organizar hábitos diarios de forma si
 
 Esta pantalla funciona como inicio de la aplicación.
 
-El objetivo de esta pantalla es mostrar una presentación simple de la app y permitir que el usuario acceda a la creación de nuevos hábitos.
-
-#### Elementos implementados
+Elementos implementados:
 
 - Título principal: “Mis hábitos”.
 - Imagen representativa relacionada con listas y organización de hábitos.
 - Descripción breve de la funcionalidad.
 - Botón “Agregar hábito”.
+- Botón “Limpiar lista”.
+- Contador dinámico de hábitos.
+- Mensaje para indicar cuando la lista está vacía.
 - Lista dinámica de hábitos.
 
-#### Funcionalidad
+Funcionalidad:
 
-Al presionar el botón “Agregar hábito”, la aplicación navega hacia una segunda pantalla llamada `AddHabitActivity`.
-
-La pantalla principal también recibe el hábito creado desde la segunda pantalla y lo agrega dinámicamente a la lista.
-
-Ejemplo:
-
-“Hábito 5: hacer ejercicio”
-
----
+- Al presionar “Agregar hábito”, la aplicación navega a una segunda pantalla para cargar un nuevo hábito.
+- Al presionar “Limpiar lista”, la aplicación elimina todos los hábitos cargados.
+- El contador se actualiza según la cantidad de hábitos en la lista.
+- Si la lista queda vacía, se muestra el mensaje “No hay hábitos cargados.”.
 
 ### Pantalla secundaria: Agregar hábito
 
-Esta pantalla permite que el usuario escriba el nombre de un nuevo hábito.
+Esta pantalla permite ingresar un nuevo hábito.
 
-El objetivo de esta pantalla es recibir un texto ingresado por el usuario y enviarlo nuevamente a la pantalla principal.
-
-#### Elementos implementados
+Elementos implementados:
 
 - Título: “Agregar hábito”.
-- Descripción breve de la acción.
+- Descripción breve.
 - Campo de texto para escribir el hábito.
 - Botón “Guardar hábito”.
+- Validación para evitar guardar un texto vacío.
 
-#### Funcionalidad
+Funcionalidad:
 
-Al presionar el botón “Guardar hábito”, la aplicación valida que el usuario haya escrito un texto.
-
-Si el campo está vacío, se muestra un mensaje indicando que primero debe escribir un hábito.
-
-Si el campo tiene contenido, la aplicación vuelve a la pantalla principal y envía el nuevo hábito utilizando un `Intent` con `putExtra`.
-
-## Flujo de uso
-
-1. El usuario abre la aplicación.
-2. Visualiza la pantalla principal “Mis hábitos”.
-3. Presiona el botón “Agregar hábito”.
-4. La aplicación abre la pantalla “Agregar hábito”.
-5. El usuario escribe un hábito.
-6. Presiona el botón “Guardar hábito”.
-7. La aplicación vuelve a la pantalla principal.
-8. El nuevo hábito aparece agregado en la lista.
+- El usuario escribe un hábito en el campo de texto.
+- Al presionar “Guardar hábito”, la aplicación envía el texto a la pantalla principal.
+- El hábito agregado aparece en la lista principal.
+- Si el campo está vacío, se muestra un mensaje indicando que primero se debe escribir un hábito.
 
 ## Recursos utilizados
 
 La aplicación utiliza:
 
-- ConstraintLayout.
-- LinearLayout vertical.
-- Button.
-- TextView.
-- ImageView.
-- EditText.
-- Variables de String en `strings.xml`.
-- Variables de dimensiones en `dimens.xml`.
-- Variables de colores en `colors.xml`.
-- Pasaje de datos entre activities.
-- Uso de extras mediante `putExtra`.
-- Comportamiento dinámico al agregar hábitos a la lista.
+- `ConstraintLayout`.
+- `LinearLayout` vertical.
+- `LinearLayout` horizontal.
+- `ScrollView`.
+- `TextView`.
+- `ImageView`.
+- `Button`.
+- `EditText`.
+- `Toast`.
+- `Intent`.
+- `putExtra`.
+- `strings.xml`.
+- `dimens.xml`.
+- `colors.xml`.
+- `string-array`.
+
+## Organización de recursos
+
+Los textos principales fueron definidos en `strings.xml`.
+
+Las dimensiones fueron definidas en `dimens.xml`.
+
+Los colores fueron definidos en `colors.xml`.
+
+Los hábitos iniciales fueron definidos en un `string-array` dentro de `strings.xml`.
+
+## Funcionalidades principales
+
+- Visualización de hábitos iniciales.
+- Navegación entre dos pantallas.
+- Carga de hábitos desde un `EditText`.
+- Envío de datos entre Activities usando `Intent` y `putExtra`.
+- Agregado dinámico de elementos `TextView` a una lista.
+- Contador dinámico de hábitos.
+- Estado visual para lista vacía.
+- Limpieza completa de la lista.
+- Uso de recursos externos para textos, colores y dimensiones.
+
+## Ejemplo de uso
+
+Al iniciar la aplicación se muestran hábitos iniciales como:
+
+- Hábito 1: tomar agua
+- Hábito 2: leer 10 minutos
+- Hábito 3: caminar
+- Hábito 4: dormir 8 horas
+
+Si el usuario agrega el hábito “meditar”, la aplicación muestra:
+
+- Hábito 5: meditar
+
+Si el usuario presiona “Limpiar lista”, la pantalla muestra:
+
+- Total de hábitos: 0
+- No hay hábitos cargados.
 
 ## Repositorio
 
 Los cambios fueron realizados directamente sobre el repositorio de GitHub, utilizando commits separados para organizar el trabajo.
-
-Repositorio:
-
-https://github.com/Valarich/parcial-2-am-acn4a-annamuradov
