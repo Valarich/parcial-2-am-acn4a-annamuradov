@@ -36,7 +36,7 @@ public class AddHabitActivity extends AppCompatActivity {
             String textoHabito = inputHabito.getText().toString().trim();
 
             if (textoHabito.isEmpty()) {
-                Toast.makeText(this, "Escribí un hábito primero", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getString(R.string.mensaje_habito_vacio), Toast.LENGTH_SHORT).show();
                 return;
             }
 

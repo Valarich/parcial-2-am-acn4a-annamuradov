@@ -24,7 +24,7 @@
             android:id="@+id/txtTituloAgregar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Agregar hábito"
+            android:text="@string/titulo_agregar_habito"
             android:textColor="@color/color_texto_principal"
             android:textSize="@dimen/titulo_texto"
             android:textStyle="bold" />
@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margen_chico"
             android:gravity="center"
-            android:text="Escribí el nombre de un hábito para sumarlo a tu lista."
+            android:text="@string/descripcion_agregar_habito"
             android:textColor="@color/color_texto_principal"
             android:textSize="@dimen/descripcion_texto" />
 
@@ -44,7 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margen_chico"
-            android:hint="Ejemplo: leer 10 minutos"
+            android:hint="@string/hint_habito"
             android:importantForAutofill="no"
             android:inputType="textCapSentences" />
 
@@ -53,7 +53,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margen_chico"
-            android:text="Guardar hábito" />
+            android:text="@string/boton_guardar_habito" />
 
     </LinearLayout>
 
