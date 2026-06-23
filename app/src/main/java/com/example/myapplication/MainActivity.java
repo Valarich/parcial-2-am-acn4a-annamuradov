@@ -13,9 +13,11 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String EXTRA_NUEVO_HABITO = "nuevo_habito";
     private static final ArrayList<String> habitosGuardados = new ArrayList<>();
     private static boolean listaInicializada = false;
 
@@ -30,12 +32,15 @@ public class MainActivity extends AppCompatActivity {
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            int pantallaPadding = getResources().getDimensionPixelSize(R.dimen.pantalla_padding);
+
             v.setPadding(
-                    systemBars.left + 24,
-                    systemBars.top + 24,
-                    systemBars.right + 24,
-                    systemBars.bottom + 24
+                    systemBars.left + pantallaPadding,
+                    systemBars.top + pantallaPadding,
+                    systemBars.right + pantallaPadding,
+                    systemBars.bottom + pantallaPadding
             );
+
             return insets;
         });
 
@@ -46,17 +51,16 @@ public class MainActivity extends AppCompatActivity {
         txtListaVacia = findViewById(R.id.txtListaVacia);
 
         if (!listaInicializada) {
-            habitosGuardados.add("tomar agua");
-            habitosGuardados.add("leer 10 minutos");
-            habitosGuardados.add("caminar");
-            habitosGuardados.add("dormir 8 horas");
+            String[] habitosIniciales = getResources().getStringArray(R.array.habitos_iniciales);
+            Collections.addAll(habitosGuardados, habitosIniciales);
             listaInicializada = true;
         }
 
-        String nuevoHabito = getIntent().getStringExtra("nuevo_habito");
+        String nuevoHabito = getIntent().getStringExtra(EXTRA_NUEVO_HABITO);
 
         if (nuevoHabito != null && !nuevoHabito.isEmpty()) {
             habitosGuardados.add(nuevoHabito);
+            getIntent().removeExtra(EXTRA_NUEVO_HABITO);
         }
 
         mostrarHabitos();
