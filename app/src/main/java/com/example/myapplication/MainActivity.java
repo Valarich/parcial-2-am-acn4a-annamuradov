@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -19,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
     private static boolean listaInicializada = false;
 
     private LinearLayout listaHabitos;
+    private TextView txtTotalHabitos;
+    private TextView txtListaVacia;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
         Button btnAgregarHabito = findViewById(R.id.btnAgregarHabito);
         Button btnLimpiarHabitos = findViewById(R.id.btnLimpiarHabitos);
         listaHabitos = findViewById(R.id.listaHabitos);
+        txtTotalHabitos = findViewById(R.id.txtTotalHabitos);
+        txtListaVacia = findViewById(R.id.txtListaVacia);
 
         if (!listaInicializada) {
             habitosGuardados.add("tomar agua");
@@ -70,9 +75,18 @@ public class MainActivity extends AppCompatActivity {
     private void mostrarHabitos() {
         listaHabitos.removeAllViews();
 
+        txtTotalHabitos.setText(getString(R.string.texto_total_habitos, habitosGuardados.size()));
+
+        if (habitosGuardados.isEmpty()) {
+            txtListaVacia.setVisibility(View.VISIBLE);
+            return;
+        }
+
+        txtListaVacia.setVisibility(View.GONE);
+
         for (int i = 0; i < habitosGuardados.size(); i++) {
             TextView nuevoHabito = new TextView(this);
-            nuevoHabito.setText("Hábito " + (i + 1) + ": " + habitosGuardados.get(i));
+            nuevoHabito.setText(getString(R.string.formato_habito, i + 1, habitosGuardados.get(i)));
             nuevoHabito.setTextSize(getResources().getDimension(R.dimen.habito_texto) / getResources().getDisplayMetrics().scaledDensity);
 
             int margenChico = getResources().getDimensionPixelSize(R.dimen.margen_chico);

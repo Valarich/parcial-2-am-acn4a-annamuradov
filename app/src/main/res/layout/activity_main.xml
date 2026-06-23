@@ -13,12 +13,12 @@
         android:id="@+id/contenedorPrincipal"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:orientation="vertical"
         android:gravity="center_horizontal"
-        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/txtTitulo"
@@ -71,11 +71,31 @@
 
         </LinearLayout>
 
+        <TextView
+            android:id="@+id/txtTotalHabitos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margen_medio"
+            android:gravity="center"
+            android:textColor="@color/color_texto_principal"
+            android:textSize="@dimen/descripcion_texto"
+            tools:text="Total de hábitos: 4" />
+
+        <TextView
+            android:id="@+id/txtListaVacia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margen_chico"
+            android:gravity="center"
+            android:text="@string/texto_lista_vacia"
+            android:textColor="@color/color_texto_principal"
+            android:textSize="@dimen/descripcion_texto" />
+
         <ScrollView
             android:id="@+id/scrollHabitos"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="@dimen/margen_medio"
+            android:layout_marginTop="@dimen/margen_chico"
             android:layout_weight="1">
 
             <LinearLayout
