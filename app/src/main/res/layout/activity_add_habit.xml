@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_fondo"
+    android:padding="@dimen/pantalla_padding"
+    tools:context=".AddHabitActivity">
+
+    <LinearLayout
+        android:id="@+id/contenedorAgregarHabito"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/txtTituloAgregar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Agregar hábito"
+            android:textColor="@color/color_texto_principal"
+            android:textSize="@dimen/titulo_texto"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtDescripcionAgregar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margen_chico"
+            android:gravity="center"
+            android:text="Escribí el nombre de un hábito para sumarlo a tu lista."
+            android:textColor="@color/color_texto_principal"
+            android:textSize="@dimen/descripcion_texto" />
+
+        <EditText
+            android:id="@+id/inputHabito"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margen_chico"
+            android:hint="Ejemplo: leer 10 minutos"
+            android:importantForAutofill="no"
+            android:inputType="textCapSentences" />
+
+        <Button
+            android:id="@+id/btnGuardarHabito"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margen_chico"
+            android:text="Guardar hábito" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
