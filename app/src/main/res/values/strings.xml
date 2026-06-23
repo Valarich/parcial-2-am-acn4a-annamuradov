@@ -12,4 +12,5 @@
     <string name="hint_habito">Ejemplo: leer 10 minutos</string>
     <string name="boton_guardar_habito">Guardar hábito</string>
     <string name="mensaje_habito_vacio">Escribí un hábito primero</string>
+    <string name="boton_limpiar_habitos">Limpiar lista</string>
 </resources>

@@ -12,7 +12,7 @@
     <LinearLayout
         android:id="@+id/contenedorPrincipal"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:orientation="vertical"
         android:gravity="center_horizontal"
         app:layout_constraintTop_toTopOf="parent"
@@ -42,24 +42,49 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margen_chico"
-            android:textColor="@color/color_texto_principal"
             android:gravity="center"
             android:text="@string/descripcion_habitos"
+            android:textColor="@color/color_texto_principal"
             android:textSize="@dimen/descripcion_texto" />
 
-        <Button
-            android:id="@+id/btnAgregarHabito"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margen_medio"
-            android:text="@string/boton_agregar_habito" />
-
         <LinearLayout
-            android:id="@+id/listaHabitos"
+            android:id="@+id/contenedorBotones"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margen_medio"
-            android:orientation="vertical" />
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnAgregarHabito"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/boton_agregar_habito" />
+
+            <Button
+                android:id="@+id/btnLimpiarHabitos"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margen_chico"
+                android:layout_weight="1"
+                android:text="@string/boton_limpiar_habitos" />
+
+        </LinearLayout>
+
+        <ScrollView
+            android:id="@+id/scrollHabitos"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/margen_medio"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:id="@+id/listaHabitos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+        </ScrollView>
 
     </LinearLayout>
 

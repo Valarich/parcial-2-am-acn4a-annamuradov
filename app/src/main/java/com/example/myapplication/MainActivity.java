@@ -16,6 +16,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private static final ArrayList<String> habitosGuardados = new ArrayList<>();
+    private static boolean listaInicializada = false;
 
     private LinearLayout listaHabitos;
 
@@ -36,13 +37,15 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Button btnAgregarHabito = findViewById(R.id.btnAgregarHabito);
+        Button btnLimpiarHabitos = findViewById(R.id.btnLimpiarHabitos);
         listaHabitos = findViewById(R.id.listaHabitos);
 
-        if (habitosGuardados.isEmpty()) {
+        if (!listaInicializada) {
             habitosGuardados.add("tomar agua");
             habitosGuardados.add("leer 10 minutos");
             habitosGuardados.add("caminar");
             habitosGuardados.add("dormir 8 horas");
+            listaInicializada = true;
         }
 
         String nuevoHabito = getIntent().getStringExtra("nuevo_habito");
@@ -56,6 +59,11 @@ public class MainActivity extends AppCompatActivity {
         btnAgregarHabito.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, AddHabitActivity.class);
             startActivity(intent);
+        });
+
+        btnLimpiarHabitos.setOnClickListener(v -> {
+            habitosGuardados.clear();
+            mostrarHabitos();
         });
     }
 
